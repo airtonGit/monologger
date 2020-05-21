@@ -45,7 +45,9 @@ func (l *Log) Warning(message string, params ...interface{}) {
 //
 //Info log line "DATETIME TAG INFO"
 func (l *Log) Info(message string, params ...interface{}) {
-	l.Println("INFO	", message, params)
+	if l.debugMode == true {
+		l.Println("INFO	", message, params)
+	}
 }
 
 //Fatal log e finaliza
